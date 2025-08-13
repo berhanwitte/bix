@@ -17,6 +17,12 @@ enum Command {
 fn main() {
     let args = Args::parse();
     match args.command {
+        Command::Create => {
+            TODO
+            // clone the bix template from github into the currrent workspace, take a string as an arg and define that as the working space
+            // problem, now i just realized for that, you need to have installed bix as a cli tool in the first place which means that you
+            // you should have already cloned the product to use it which defeats the purpose
+        }
         Command::Init => {
             let cwd = env::current_dir()?;
             let dir_name = cwd.file_name().unwrap().to_string_lossy();
@@ -29,8 +35,7 @@ fn main() {
                 .status()?;
         },
         Command::Propose => {
-
+            
         }
     }  
 }
-

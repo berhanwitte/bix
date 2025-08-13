@@ -2,7 +2,29 @@
 name = "bix"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+
+[[bin]]
+name = "bix"
+path = "src/main.rs"
+
+[[bin]]
+name = "bix-node"
+path = "src/bin/bix-node.rs"
 
 [dependencies]
-anyhow = "1.0.989"
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+bix-core = { path = "bix-core" }
+
+[workspace]
+resolver = "3"
+members = ["bix-core"]
+
+[workspace.package]
+edition = "2024"
+authors = ["Berhan Witte <berhanwitte@gmail.com"]
+
+[workspace.dependencies]
+anyhow = "1.0.99"
 clap = "4.5.45"
